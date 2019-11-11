@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/myPortfolio/static/css/main.c163e64e.chunk.css",
+    "main.js": "/myPortfolio/static/js/main.4b59b182.chunk.js",
+    "main.js.map": "/myPortfolio/static/js/main.4b59b182.chunk.js.map",
+    "runtime~main.js": "/myPortfolio/static/js/runtime~main.918aa22c.js",
+    "runtime~main.js.map": "/myPortfolio/static/js/runtime~main.918aa22c.js.map",
+    "static/js/2.d7c07f0e.chunk.js": "/myPortfolio/static/js/2.d7c07f0e.chunk.js",
+    "static/js/2.d7c07f0e.chunk.js.map": "/myPortfolio/static/js/2.d7c07f0e.chunk.js.map",
+    "index.html": "/myPortfolio/index.html",
+    "precache-manifest.2d6e0cd91f6ebccdfee77cda564eb01b.js": "/myPortfolio/precache-manifest.2d6e0cd91f6ebccdfee77cda564eb01b.js",
+    "service-worker.js": "/myPortfolio/service-worker.js",
+    "static/css/main.c163e64e.chunk.css.map": "/myPortfolio/static/css/main.c163e64e.chunk.css.map",
+    "static/media/index.css": "/myPortfolio/static/media/black-wood.90c5a638.png",
+    "static/media/iammonza.png": "/myPortfolio/static/media/iammonza.81a4e1b6.png",
+    "static/media/Contact.css": "/myPortfolio/static/media/light-wood.ab9a5013.png"
+  }
+}

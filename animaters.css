@@ -1,0 +1,58 @@
+div#loader-wrapper {
+	--x: 100%;
+}
+
+div#loader-wrapper {
+	box-sizing: border-box;
+	visibility: hidden;
+}
+
+div#loader {
+	visibility: hidden;
+	box-sizing: border-box;
+	z-index: 101;
+	opacity: 0;
+	transition: all 0.5s ease-out;
+}
+
+div.section-left {
+	visibility: hidden;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	width: 51%;
+	height: 100%;
+	background: #555;
+	z-index: 100;
+	left: 0;
+	transform: translateX(-100%);
+	/*transition: all 0.5s 0.5s ease-out;*/
+	/*animation: open-left 6s ease-out;*/
+}
+
+div.section-right {
+	visibility: hidden;
+	box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	width: 51%;
+	height: 100%;
+	background: #555;
+	z-index: 1000;
+	right: 0;
+	transform: translateX(100%);
+	/*transition: all 0.5s 0.5s ease-out;*/
+	/*animation: open-right 6s ease-out;*/
+}
+
+@keyframes open-left {
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes open-right {
+	to {
+		transform: translateX(100%);
+	}
+}
