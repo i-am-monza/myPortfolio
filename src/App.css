@@ -1,0 +1,27 @@
+.container {
+	display: flex; 
+	justify-content: space-between;
+}
+
+div.sub-content {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	grid-gap: 1em;
+	justify-items: stretch;
+	align-items: stretch;
+}
+
+@media screen and (max-width: 320px){
+	div.sub-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 1em;
+		justify-items: stretch;
+		align-items: stretch;
+	}
+}
+
+@media screen and (max-width: 992px)
+.container {
+    max-width: 760px;
+}

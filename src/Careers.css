@@ -1,0 +1,455 @@
+div.careers {
+	--linearGradient: linear-gradient(120deg, whitesmoke, transparent, aliceblue, transparent, black);
+}
+
+svg#careerBorder {
+	--linearGradient: linear-gradient(120deg, whitesmoke, transparent, aliceblue, transparent, black);
+}
+
+svg#careerBorder {
+	position: absolute;
+	height: 104%;
+	width: 103%;
+	margin: -2% 0% 0% -2%;
+	box-shadow: 0px 0px 10px 5px lightgrey;
+	background-image: var(--linearGradient);
+	color: transparent;
+	mix-blend-mode: color;
+}
+
+rect {
+	stroke: whitesmoke;
+	stroke-width: 5px;
+	fill: none;
+	stroke-dashArray: 10px 5px;
+	animation: march 4.5s infinite cubic-bezier(0.6, -1.28, 0.35, 1.98);
+}
+
+@keyframes march {
+	to {
+		stroke-dashOffset: -15px;
+	}
+}
+
+div.careers {
+	display: none;
+	position: absolute;
+	width: calc(100px + 82%);
+	left: 5px;
+	height: fit-content;
+	justify-items: stretch;
+    align-items: stretch;
+    background-blend-mode: luminosity;
+	top: 10%;
+	z-index: 6;
+}
+
+div#careerStage {
+	border: 1% solid;
+    border-radius: 1% 1% 1% 1%;
+    margin: -0.1em;
+	background-image: conic-gradient(rgba(0,0,0, 0.6) 0.09turn, rgba(245, 245, 245, 0.5) 0.27turn, rgba(0,0,0, 0.7) 0.27turn, rgba(0, 0, 0, 0.9) 0.54turn, rgba(245, 245, 245, 0.7) 1.54turn);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: fit-content;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+div#skills {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+    align-items: center;
+    padding: 5% 0%;
+}
+
+div#skills div {
+	margin: 5px;
+	padding: 5px;
+	box-shadow: 0px 0px 5px 5px rgba(245, 245, 245, 0.5);
+	border-radius: 10%;
+}
+
+div.fetHeader {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 102, 255, 0.65);
+    top: 0;
+    left: 0;
+    padding: 5px;
+    margin: 5px;
+    height: 22%;
+    width: 97%;
+    z-index: 7;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    box-shadow: 0 0 5px 5px;
+
+}
+
+div.fetHeader h1 {
+	font-family: Consolas;
+	font-feature-settings: p-caps;
+	text-align: center;
+	color: whitesmoke;
+	background: rgb(0, 2, 2);
+    mix-blend-mode: lighten;
+}
+
+div#fet {
+	background: rgba(245, 245, 245, 0.2);
+	background-position: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: auto;
+    color: black;
+}
+
+div.experienceHeader {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 102, 255, 0.65);
+    top: 0;
+    left: 0;
+    padding: 5px;
+    margin: 5px;
+    height: 95%;
+    width: 95%;
+    z-index: 7;
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    box-shadow: 0 0 5px 5px;
+
+}
+
+div.experienceHeader h1 {
+	font-family: Consolas;
+	font-feature-settings: p-caps;
+	text-align: center;
+	color: whitesmoke;
+	background: rgb(0, 2, 2);
+    mix-blend-mode: lighten;
+}
+
+div#experience {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-columns: minmax(100px, auto);
+	grid-auto-rows: minmax(100px, auto);
+	grid-gap: 10px;
+	background: rgba(245, 245, 245, 0.2);
+	background-position: center;
+	width: auto;
+	height: auto;
+}
+
+.devicon {
+	font-size: 5em;
+	color: whitesmoke;
+}
+
+img {
+	width: 100px;
+	height: 100px;
+}
+
+div.carousel {
+	display: flex;
+}
+
+div.carousel-inner {
+	display: inline-flex;
+	justify-content: flex-end;
+}
+
+ol.carousel-indicators {
+	display: flex;
+}
+
+div#careers h5 {
+	font-family: "Courier New"; 
+	font-style: italic; 
+	font-weight: 500;
+	background-color: lavender;
+	line-height: 10px;
+	color: whitesmoke;
+}
+
+#uctHeader, #cogrammarHeader {
+	text-align: center; 
+	font-family: "Courier New";
+	margin: 2px;
+	padding: 2px;
+	width: 98%;
+	font-weight: 500; 
+	line-height: 20px;
+	color: whitesmoke;
+	text-decoration: none;
+	background-image: conic-gradient(#bbb 0.09turn, #0b1c2b 0.27turn, #2a2b1df0 0.27turn, #666 0.54turn, #a3e5ff 1.54turn);
+	background-blend-mode: overlay;
+	border-radius: 10px 10px 0px 0px;
+}
+
+
+#sfdaHeader, #mentorHeader, #itrHeader  { 
+	text-align: center; 
+	font-family: "Courier New";
+	margin: 24px;  
+	font-weight: bold; 
+	line-height: 20px;
+	color: whitesmoke;
+	border-radius: 10px 10px 0px 0px;
+}
+
+div.careers p {
+	font-family: Consolas;
+	line-height: 22px;
+	font-size: 20px;
+	font-weight: 400;
+	font-feature-settings: p-caps;
+	color: whitesmoke;
+	padding: 5px;
+	margin: 5px;
+}
+
+div#uct, div#cogrammar, div#sfda, div#mentor, div#itr {
+	position: relative;
+	border: solid whitesmoke;
+	border-width: 0 0 0.1em 0;
+	transition: all 2s ease-in 0.5s;
+
+}
+
+div#experience div {
+	border-radius: 5% 5% 5% 5%;
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+	div.careers {
+		margin: 2% 4%;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+	div.careers {
+		margin: 4% 2%;
+	}
+
+	#sfdaHeader, #mentorHeader, #itrHeader, #uctHeader, #cogrammarHeader { 
+		font-weight: 500; 
+		line-height: 24px;
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 465px){
+	div.careers {
+		margin: 1% 1.5%;
+		width: 96%;
+	}
+
+	div#careers h3 {
+		display: flex;
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	div#itr h3 {
+		text-align: center;
+	}
+
+	div#careers p {
+		line-height: 18px;
+		font-size: 14px;
+		font-weight: 400;
+		width: inherit;
+	}
+
+	.devicon {
+	    font-size: 3em;
+	}
+
+	div#experience div {
+		width: 100%;
+	}
+
+	div#careers div#uct, div#cogrammar, div#sfda, div#mentor, div#itr > div {
+	    width: inherit;
+	}
+
+	div#experience {
+	    display: grid;
+	    grid-template-columns: repeat(3, 32%);
+	    grid-auto-columns: minmax(100px, auto);
+	    grid-auto-rows: minmax(100px, auto);
+	    grid-gap: 10px;
+	    background: rgba(245, 245, 245, 0.2);
+	    background-position: center;
+	    width: auto;
+	    height: auto;
+	}
+}
+
+@media screen and (max-width: 425px) and (min-width: 375px){
+	div.careers {
+		margin: 0% 2%;
+		width: 96%;
+	}
+
+	div#careers h3 {
+		display: flex;
+		font-size: 18px;
+		font-weight: 500;
+		width: 100%
+	}
+
+	div#itr h3 {
+		
+		margin-bottom: 24px;
+	}
+
+	div#careers p {
+		line-height: 18px;
+		font-size: 14px;
+		font-weight: 400;
+		width: 100%;
+	}
+
+	.devicon {
+	    font-size: 2.5em;
+	}
+
+	div#experience div {
+		width: 100%;
+	}
+
+	div#careers div#uct, div#cogrammar, div#sfda, div#mentor, div#itr > div {
+	    width: 100%;
+	}
+
+	#sfdaHeader, #mentorHeader, #itrHeader, #uctHeader, #cogrammarHeader {
+	    justify-content: center;
+	    font-family: "Courier New";
+	    margin: 24px 0px;
+	    line-height: 20px;
+	    color: whitesmoke;
+	}
+
+	div#experience {
+	    display: grid;
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(4, auto);
+        grid-auto-columns: minmax(100px, 160px);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+        background: rgba(245, 245, 245, 0.2);
+        background-position: center;
+        width: auto;
+        height: auto;
+	}
+
+	div#sfda {
+		grid-dolumn: 1/2;
+		grid-row: 1/2 ;
+	}
+
+	div#mentor {
+		grid-dolumn: 1/2;
+		grid-row: 2/3;
+	}
+
+	div#itr {
+		grid-dolumn: 1/2;
+		grid-row: 3/4;
+	}
+}
+
+@media screen and (max-width: 320px){
+	div.careers {
+		margin: 0% 2%;
+		width: 96%;
+	}
+
+	.devicon {
+	    font-size: 2.5em;
+	}
+
+	div#careers h3 {
+		display: flex;
+		font-size: 18px;
+		font-weight: 500;
+		width: 100%
+	}
+
+	div#itr h3 {
+		
+		margin-bottom: 24px;
+	}
+
+	div#fet p {
+		line-height: 18px;
+		font-size: 14px;
+		width: inherit;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	div#experience p {
+		line-height: 18px;
+		font-size: 14px;
+		font-weight: 400;
+		width: inherit;
+	}
+
+	div#experience div {
+		width: 100%;
+		margin: 0;
+	}
+
+	div#careers div#uct, div#cogrammar, div#sfda, div#mentor, div#itr > div {
+	    width: 100%;
+	}
+
+	#sfdaHeader, #mentorHeader, #itrHeader, #uctHeader, #cogrammarHeader {
+	    justify-content: center;
+	    font-family: "Courier New";
+	    margin: 24px 0px;
+	    line-height: 20px;
+	    color: whitesmoke;
+	}
+
+	div#experience {
+	    display: grid;
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(4, auto);
+        grid-auto-columns: minmax(100px, 160px);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+        background: rgba(245, 245, 245, 0.2);
+        background-position: center;
+        width: auto;
+        height: auto;
+	}
+
+	div#sfda {
+		grid-dolumn: 1/2;
+		grid-row: 1/2 ;
+	}
+
+	div#mentor {
+		grid-dolumn: 1/2;
+		grid-row: 2/3;
+	}
+
+	div#itr {
+		grid-dolumn: 1/2;
+		grid-row: 3/4;
+	}
+}

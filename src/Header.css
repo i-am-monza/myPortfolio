@@ -1,0 +1,246 @@
+div.header {
+    display: block;
+    z-index: 10;
+}
+
+article.navigatorMiniStage {
+    display: none;
+}
+
+div#headerStage {
+	position: fixed;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    top: 2%;
+    left: 4%;
+    right: 4%;
+    border: 2px double;
+    border-width: medium 0;
+    background: rgba(245, 245, 245, 0.7);
+}
+
+div.social-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 2%;
+}
+
+div#email-controls, div#cvRequest-controls, div#request-medium {
+    display: inline-flex;
+    align-items: center;
+    margin: 1%;
+    white-space: nowrap;
+}
+
+div.request {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+div.social-link > a {
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+label {
+    margin: 0;
+    color: #007bff;
+}
+
+button {
+    color: floralwhite;
+    text-shadow: 0px -2px 2px black;
+    font-family: "Courier New";
+    background-image: linear-gradient(45deg, darkgrey, #007bff, black), linear-gradient(45deg, darkgrey, #007bff, black), linear-gradient(45deg, darkgrey, #007bff, black);
+    width: auto;
+    font-size: x-large;
+    justify-content: stretch;
+    align-items: stretch;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 4px 0px;
+    background-blend-mode: multiply, luminosity, overlay;
+    mix-blend-mode: luminosity;
+    margin: 0px 5px;
+    border-radius: 15px 15px 5px 5px;
+    white-space: nowrap;
+}
+
+input#email {
+background-image: linear-gradient(45deg, darkgrey, #007bff, black), linear-gradient(45deg, darkgrey, #007bff, black), linear-gradient(45deg, darkgrey, #007bff, black);
+    color: floralwhite;
+    background-blend-mode: multiply, luminosity, overlay;
+    font-family: "Courier New";
+    font-size: auto;
+    width: auto;
+    justify-content: stretch;
+    align-items: stretch;
+    cursor: initial;
+    box-shadow: inset 0px 0px 10px -4px;
+    mix-blend-mode: luminosity;
+    border-radius: 11px;
+    padding: 2px 5px;
+}
+
+label#emailLabel {
+    font-family: "Courier New";
+    color: #1a2d42;
+    font-size: large;
+    font-weight: 400;
+    text-shadow: 0px -1px 2px black;
+}
+
+div#request-medium {
+    display: none;   
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1220px){
+    input#email {
+        font-size: 40px;
+        border-radius: 41px;
+    }
+
+    label#emailLabel {
+        font-size: xx-large;
+        font-weight: 500;
+    }
+
+    button {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 769px){
+    input#email {
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px){
+
+    label#emailLabel {
+        display: inline-flex;
+        align-items: center;
+        font-family: monospace;
+        color: whitesmoke;
+        font-size: medium;
+        border-radius: 7px;
+    }
+
+    div.social-link > a {
+        width: 25%;
+        height: 25%;
+        padding: 1%;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div#headerStage > div:nth-child() {
+        display: none;
+    }
+
+    button {
+        font-size: medium;
+        padding: 0;
+    }
+
+    div#headerStage {
+        position: absolute;
+        width: 705px;
+    }
+}
+
+@media screen and (max-width: 425px) and (min-width: 376px){
+    div#headerStage {
+        position: fixed;
+        width: 93%;
+    }
+
+    button {
+        font-size: smaller;
+        height: 80%;
+    }
+
+    div.social-link {
+        display: none;
+    }
+
+    div#email-controls, div#cvRequest-controls {
+        display: none;
+    }
+
+    div#request-medium {
+        display: block;
+    }
+
+    article.navigatorMiniStage {
+        display: inline-flex;
+        font-size: small;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 375px) and (min-width: 321px){
+    div.request div#email-controls, div#cvRequest-controls {
+        display: none;
+    }
+
+    div.social-link {
+        display: none;
+    }
+
+    article.navigatorMiniStage {
+        display: inline-flex;
+    }
+
+    div#request-medium {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        font-size: small;
+    }
+
+    div#headerStage {
+        position: absolute;
+        width: 370px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    div.request div#email-controls, div#cvRequest-controls {
+        display: none;
+    }
+
+    div.social-link {
+        display: none;
+    }
+
+    article.navigatorMiniStage {
+        display: inline-flex;
+    }
+
+    div#request-medium {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        font-size: small;
+    }
+
+    div#headerStage {
+        position: absolute;
+        width: 310px;
+        margin-right: 2%;
+    }
+}
