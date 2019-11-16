@@ -83,7 +83,7 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 2460px) and (min-width: 1440px){
+@media screen and (max-width: 2460px) {
     div.navigator {
         left: -2%;
     }
@@ -101,7 +101,7 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1024px) {
+@media screen and (max-width: 1440px) {
     li a {
         font-size: 40px;
         font-weight: 800;
@@ -109,7 +109,7 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px){
+@media screen and (max-width: 1024px) {
     li a {
         font-size: 25px;
         font-weight: 800;
@@ -123,7 +123,7 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 425px){
+@media screen and (max-width: 768px) {
     div.navigator {
         left: 0;
     }
@@ -147,7 +147,7 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 426px) and (min-width: 375px){
+@media screen and (max-width: 426px) {
     div.navigator {
         display: none;
     }

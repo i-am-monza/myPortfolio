@@ -18,7 +18,7 @@ export class NavigatorMini extends Component
 						<a id="careersLink" href="#careersAnchor">Career</a>
 					</li>
 					<li>
-						<a id="contactLink" href="#contactAnchor" >Contact</a>
+						<a id="contactLink" href="" >Contact</a>
 					</li>
 				</ul>
 			</div>

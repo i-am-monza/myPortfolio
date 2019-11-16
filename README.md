@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Application All Projects
+This project is a single application that runs three diiferent projects. These projects are:
+1. An online calculator accessible through the link 'Simple Calcultor.'
+2. A mini store application accessible through the link 'Online Store.'
+2. An itunes search application accessible through the link 'Search iTunes.'
+You need to have node.js installed before attempting to test or run the application.
 
-## Available Scripts
+## About Applications
+Below is a general description of each application.
 
-In the project directory, you can run:
+### - Simple Calculator
+The Simple Calculator application is a calculator that evaluates basic operations. The calculator can solve addition, subtraction, multiplication and division expression.
+The calculator does not keep track of the previouse result so you cannot evaluate chained expressions.
 
-### `npm start`
+### - Online Store
+This application is a prototype of a mini online store. Only three products are available and a user needs to login first before they can either add to cart, view cart products
+or checkout cart. The checkout functionality is not complete. The application checkouts, but unable to process entered coupons or the delivery information after submit order is pressed.
+Implimentation of this isn't fully complete. There is functionality that it still lacks, be sure to see fixed bug updates on the following release.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### - Search itunes
+This application accesses the itunes search api to look for data. The user enters the item name on the input field, then selects what type of media it on the dropdown for searching.
+This application also alows the user to add their favourite items on memory to access later.
+The application communicates with a developed server on localhost:8080
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Running/Testing Application
+To run or execute the application, double click on the file run_application.bat as administrator on your local machine.
+The application will configure the application before opening it.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Please note: 
+I was more focused on the functionality and UI when I was developing the application. The component structure is partly chaotic, did not have time to sort out the aplications
+modularity structure, like having complex componets in their own js files. Hope you are impressed, and enjoy playing around with my work. Hope the implimentation excites you as much as it did me. :)

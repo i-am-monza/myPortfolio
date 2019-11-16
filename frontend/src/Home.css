@@ -61,7 +61,7 @@ div#aboutBacksheet::after {
     z-index: -2;
 }
 
-@media screen and (max-width: 2560px) and (min-width: 1441px){
+@media screen and (max-width: 2560px){
     div.home {
         left: 0px;
         top: -50px;
@@ -72,7 +72,7 @@ div#aboutBacksheet::after {
     }
 }
 
-@media screen and (max-width: 1440px) and (min-width: 1025px){
+@media screen and (max-width: 1440px){
     div.home {
         left: -5px;
         top: 0px;
@@ -80,7 +80,7 @@ div#aboutBacksheet::after {
     }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px){
+@media screen and (max-width: 1024px){
     div.home {
         left: -5px;
         top: -40px;
@@ -90,7 +90,7 @@ div#aboutBacksheet::after {
 }
 
 
-@media screen and (max-width: 768px) and (min-width: 425px){
+@media screen and (max-width: 768px){
     div.home {
         top: -32px;
         left: -15px;
@@ -98,7 +98,7 @@ div#aboutBacksheet::after {
     }
 }
 
-@media screen and (max-width: 426px) and (min-width: 375px){
+@media screen and (max-width: 426px){
     div.home {
         top: -25px;
         left: -10px;
@@ -106,7 +106,7 @@ div#aboutBacksheet::after {
     }
 }
 
-@media screen and (max-width: 375px) and (min-width: 320px){
+@media screen and (max-width: 375px){
     div.home {
         top: -25px;
         left: -6px;
