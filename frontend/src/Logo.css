@@ -173,14 +173,23 @@ svg#logoSurname path:nth-child(7) {
 	svg#logoName {
 		width: 70%;
 	    left: 13%;
-	    margin: 0% 0% -18% 12%;
+	    margin: -30% 0% -18% 12%;
 	    position: absolute;
 	}
 
 	svg#logoSurname {
 	    width: 134%;
-    	margin: 0% 0% -36% -41%;
+    	margin: -10% 0% -36% -41%;
 	}
+
+	img#iconImage {
+		width: 250px;
+    	height: 250px;
+	}
+
+	div#logoicon {
+		margin-top: 10%;
+	}	
 }
     ;
 @media screen and (max-width: 1024px){

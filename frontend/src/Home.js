@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Home.css';
 import './About.css';
 import './Careers.css';
@@ -8,28 +8,104 @@ import './Logo.css';
 import Monza from './images/iammonza.png';
 import LogoIcon from './images/logosnippet.png';
 
-export default class Home extends Component
-{
-	marchIcons = () => {
-		alert("Marching icons function");
-	}
+export default class Home extends Component {
+    constructor() {
+        super();
 
-	render()
-	{
-		return (
-			<div id="home" className="home">
+        this.date = new Date();
+
+        this.abbriv = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        this.url = "http://localhost:3001"
+
+        this.state = { archive: [] };
+    }
+
+    makeRequest = async (path, init) => {
+        let request = await fetch(this.url.concat(path), init);
+
+        let response = await request.json();
+
+        return response;
+    }
+
+    postNote = () => {
+        let bubble = {
+	        author : this.state.author,
+	        emailNote : this.state.emailNote,
+	        note : this.state.note,
+	        date: this.date.getDate() + "-" + this.abbriv[this.date.getMonth() + 1] + "-" + String(this.date.getYear()).substring(1, this.date.getYear().length)
+	    }
+
+	    
+        let path = "/messageBoard/postNote";
+        let init = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(bubble) }
+        console.log("bubble before post", init)
+        this.makeRequest(path, init)
+			.then(data => {
+			    console.log("bubble after post", data)
+            	this.setState({archive: data});
+            }, err => {
+            	console.error(err);
+            })
+    }
+
+    captureInputById = e => {
+        switch (e.target.id) {
+            case 'author':
+                {
+                    let author = e.target.value;
+                    this.setState(() => {
+                        return { author };
+                    });
+                    break;
+                }
+            case 'emailNote':
+                {
+                    let emailNote = e.target.value;
+                    this.setState(() => {
+                        return { emailNote };
+                    });
+                    break;
+                }
+            case 'note':
+                {
+                    let note = e.target.value;
+                    this.setState(() => {
+                        return { note };
+                    });
+                    break;
+                }
+            case '__':
+                {
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+    }
+
+    marchIcons = () => {
+        alert("Marching icons function");
+    }
+
+    render() {
+        return (
+            <div id="home" className="home">
 				<Logo />
 				<About />
 				<Careers marchIcons={this.marchIcons}/>
-				<Contact />
+				<Contact date={this.date} archive={this.state.archive} postNote={this.postNote} captureInputById={this.captureInputById} />
 			</div>
-		);
-	}
+        );
+    }
 }
 
 const Logo = () => {
-	return (
-		<div id="logo" className="logo">
+    return (
+        <div id="logo" className="logo">
 			<div id="logoText">
 				<svg id="logoName" width="346" height="160" viewBox="0 0 292 65" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M43.728 14.312L30.264 44.624H23.496L9.95998 14.312V56H3.47998V5.6H13.056L27.024 37.496L40.776 5.6H50.568V56H43.728V14.312Z" stroke="#FBF7F7" strokeWidth="6" mask="url(#path-1-outside-1)"/>
@@ -53,12 +129,12 @@ const Logo = () => {
 				<img id="iconImage" src={LogoIcon} alt="LogoIcon"/>
 			</div>
 		</div>
-	);
+    );
 }
 
 const About = () => {
-	return (
-		<div id="about" className="about">
+    return (
+        <div id="about" className="about">
 			<div id="collage">
 				<div id="background">
 					<h4>Background</h4>
@@ -94,20 +170,20 @@ const About = () => {
 				</div>
 			</div>
 		</div>
-	);
+    );
 }
 
 const CareersBorder = () => {
-	return (
-		<svg id="careerBorder">
+    return (
+        <svg id="careerBorder">
 			<rect width="100%" height="100%" contentEditable="true"/>
 		</svg>
-	);
+    );
 };
 
 const Careers = (props) => {
-	return (
-		<div id="careers" className="careers">
+    return (
+        <div id="careers" className="careers">
 			<CareersBorder/>
 			<div id="careerStage">				
 				<div id="fet">
@@ -220,17 +296,20 @@ const Careers = (props) => {
 				</div>
 			</div>
 		</div>
-	);
+    );
 }
 
 // eslint-disable-next-line
 const Contact = props => {
-	return (
-		<div id="contact" className="contact">
+    return (
+        <div id="contact" className="contact">
 			<div id="contactStage">
 				<div id="board">
 					<h1>Message Board</h1>
 					<div id="messageBoard">
+						{props.archive.map((item, key) => {
+							return <Bubble key={key++} bubble={item}/>;
+						})}
 					</div>
 				</div>
 				<div id="boardAction">
@@ -242,11 +321,11 @@ const Contact = props => {
 							<h4 htmlFor="note">Note:</h4>
 						</div>
 						<div id="noteInputs" style={{float: "right"}}>
-							<input id="author" ></input>
-							<input id="emailNote" required="required"></input>
-							<textarea id="note" rows="4" cols="20"></textarea>
+							<input id="author" required="required" onChange={(event) => props.captureInputById(event)}></input>
+							<input id="emailNote" required="required"  onChange={(event) => props.captureInputById(event)}></input>
+							<textarea id="note" rows="4" cols="20"  onChange={(event) => props.captureInputById(event)}></textarea>
 						</div>
-						<button id="submitNote" style={{justifyContent: "center"}}>post</button>
+						<button id="submitNote" style={{justifyContent: "center"}} onClick={() => props.postNote()}>post</button>
 					</div>
 					<div id="message">
 						<h3>message me</h3>
@@ -263,5 +342,20 @@ const Contact = props => {
 				</div>
 			</div>
 		</div>
-	);
+    );
+}
+
+const Bubble = props => {
+	console.log(props.bubble.getDate);
+    return (
+        <div id="bubble">
+			<div id="head">
+				<div id="user">{props.bubble.author}</div>
+				<div id="stamp">{props.bubble.date}</div>
+			</div>
+			<div id="body">
+				<p>{props.bubble.note}</p>
+			</div>
+		</div>
+    );
 }
