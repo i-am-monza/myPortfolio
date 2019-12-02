@@ -239,37 +239,41 @@ div#experience div {
 	}
 
 	#uctHeader, #cogrammarHeader {
-	text-align: center;
-    font-family: "Courier New";
-    font-size: 120px;
-    margin: 2px;
-    padding: 2px;
-    width: auto;
-    height: auto;
-    font-weight: 500;
-    line-height: 20px;
-    color: whitesmoke;
-    text-decoration: none;
-    background-image: conic-gradient(#bbb 0.09turn, #0b1c2b 0.27turn, #2a2b1df0 0.27turn, #666 0.54turn, #a3e5ff 1.54turn);
-    background-blend-mode: overlay;
-    border-radius: 10px 10px 0px 0px;
+		text-align: center;
+	    font-family: "Courier New";
+	    font-size: 70px;
+	    margin: 2px 0 10px 0px;
+	    padding: 2px;
+	    width: auto;
+	    height: auto;
+	    font-weight: 500;
+	    line-height: 20px;
+	    color: whitesmoke;
+	    text-decoration: none;
+	    background-image: conic-gradient(#bbb 0.09turn, #0b1c2b 0.27turn, #2a2b1df0 0.27turn, #666 0.54turn, #a3e5ff 1.54turn);
+	    background-blend-mode: overlay;
+	    border-radius: 10px 10px 0px 0px;
 	}
 
 	#sfdaHeader, #mentorHeader, #itrHeader  { 
 		text-align: center; 
 		font-family: "Courier New";
-		margin: 24px;  
-		font-weight: bold; 
-		line-height: 55px;
+		font-size: 70px;
+	    margin: 2px 0 10px 0px;
+		font-weight: 500; 
+		line-height: 70px;
     	font-size: 60px;
 		color: whitesmoke;
+		text-decoration: none;
+	    background-image: conic-gradient(#bbb 0.09turn, #0b1c2b 0.27turn, #2a2b1df0 0.27turn, #666 0.54turn, #a3e5ff 1.54turn);
+	    background-blend-mode: overlay;
 		border-radius: 10px 10px 0px 0px;
 	}
 
 	div.careers p {
 		font-family: Consolas;
-		line-height: 54px;
-    	font-size: 50px;
+	    line-height: 50px;
+	    font-size: 50px;
 		font-weight: 400;
 		font-feature-settings: p-caps;
 		color: whitesmoke;
@@ -296,6 +300,17 @@ div#experience div {
 @media screen and (max-width: 1024px) {
 	div.careers {
 		margin: 4% 2%;
+	}
+
+	div.careers p {
+		font-family: Consolas;
+		line-height: 20px;
+    	font-size: 20px;
+		font-weight: 400;
+		font-feature-settings: p-caps;
+		color: whitesmoke;
+		padding: 5px;
+		margin: 5px;
 	}
 
 	#sfdaHeader, #mentorHeader, #itrHeader, #uctHeader, #cogrammarHeader { 

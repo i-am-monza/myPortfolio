@@ -68,73 +68,73 @@ svg#logoName path, svg#logoSurname path {
 svg#logoName path:nth-child(1) {
 	stroke-dasharray: 359px;
 	stroke-dashoffset: 359px;
-	animation: crawl 10s ease forwards 1.1s;
+	animation: crawl 15s ease forwards 5.1s;
 }
 
 svg#logoName path:nth-child(2){
 	stroke-dasharray: 203px;
 	stroke-dashoffset: 203px;
-	animation: crawl 10s ease forwards 0.1s;
+	animation: crawl 15s ease forwards 2.1s;
 }
 
 svg#logoName path:nth-child(3) {
 	stroke-dasharray: 199px;
 	stroke-dashoffset: 199px;
-	animation: crawl 10s ease forwards 0.7s;
+	animation: crawl 15s ease forwards 5.1s;
 }
 
 svg#logoName path:nth-child(4) {
 	stroke-dasharray: 187px;
 	stroke-dashoffset: 187px;
-	animation: crawl 10s ease forwards 0.3s;
+	animation: crawl 15s ease forwards 5.3s;
 }
 
 svg#logoName path:nth-child(5) {
 	stroke-dasharray: 225px;
 	stroke-dashoffset: 225px;
-	animation: crawl 10s ease forwards 1s;
+	animation: crawl 15s ease forwards 2.5s;
 }
 
 svg#logoSurname path:nth-child(1) {
 	stroke-dasharray: 273px;
 	stroke-dashoffset: 273px;
-	animation: crawl 10s ease forwards 0.5s;
+	animation: crawl 15s ease forwards 1.5s;
 }
 
 svg#logoSurname path:nth-child(2) {
 	stroke-dasharray: 116px;
 	stroke-dashoffset: 116px;
-	animation: crawl 10s ease forwards 1.6s;
+	animation: crawl 15s ease forwards 3.6s;
 }
 
 svg#logoSurname path:nth-child(3) {
 	stroke-dasharray: 199px;
 	stroke-dashoffset: 199px;
-	animation: crawl 10s ease forwards 0.7s;
+	animation: crawl 15s ease forwards 5.7s;
 }
 
 svg#logoSurname path:nth-child(4) {
 	stroke-dasharray: 284px;
 	stroke-dashoffset: 284px;
-	animation: crawl 10s ease forwards 1s;
+	animation: crawl 15s ease forwards 1.5s;
 }
 
 svg#logoSurname path:nth-child(5) {
 	stroke-dasharray: 225px;
 	stroke-dashoffset: 225px;
-	animation: crawl 10s ease forwards 0.4;
+	animation: crawl 15s ease forwards 3.4;
 }
 
 svg#logoSurname path:nth-child(6) {
 	stroke-dasharray: 199px;
 	stroke-dashoffset: 199px;
-	animation: crawl 10s ease forwards 1.0s;
+	animation: crawl 15s ease forwards 5.0s;
 }
 
 svg#logoSurname path:nth-child(7) {
 	stroke-dasharray: 219px;
 	stroke-dashoffset: 219px;
-	animation: crawl 10s ease forwards 1.4s;
+	animation: crawl 15s ease forwards 3.4s;
 }
 
 @keyframes crawl {

@@ -1,8 +1,9 @@
 {
   "homepage": "http://i-am-monza.github.io/myPortfolio",
-  "name": "task1",
+  "name": "application-frontend",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",

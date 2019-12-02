@@ -74,7 +74,7 @@ div#aboutBacksheet::after {
 
 @media screen and (max-width: 1440px){
     div.home {
-        left: -5px;
+        left: -60px;
         top: 0px;
         width: 1038px;
     }

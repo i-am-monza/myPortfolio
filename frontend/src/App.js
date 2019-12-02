@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-//import update from 'react-addons-update';
 import './App.css';
+// Import queries module
 import './queries/queries.js'
 // Import the Header component to be rendered in this app component
 import Header from './Header.js';
@@ -17,6 +17,9 @@ export default class App extends Component
 	    		<div className="sub-content">
 	    			<Navigator />
 	    			<Home />
+	    		</div>
+	    		<div id="curtain">
+	    			<h1>"There are leaders who, in addition to being highly capable, also posses a paradoxial mix of two seemingly conflicting qualities: great ambition for the greater good and personal humility." <i>- anonymous</i></h1>
 	    		</div>
 			</div>
 		 );

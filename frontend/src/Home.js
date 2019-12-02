@@ -21,12 +21,28 @@ export default class Home extends Component {
         this.state = { archive: [] };
     }
 
+    componentDidMount() {
+    	this.getNotes();
+    }
+
     makeRequest = async (path, init) => {
         let request = await fetch(this.url.concat(path), init);
 
         let response = await request.json();
 
         return response;
+    }
+
+    getNotes = () => {
+    	let path = "/messageBoard/getNotes";
+        let init = { method: "GET", headers: { "Content-Type": "application/json" }}
+        
+        this.makeRequest(path, init)
+			.then(data => {
+            	this.setState({archive: data});
+            }, err => {
+            	console.error(err);
+            })
     }
 
     postNote = () => {
@@ -40,11 +56,29 @@ export default class Home extends Component {
 	    
         let path = "/messageBoard/postNote";
         let init = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(bubble) }
-        console.log("bubble before post", init)
+        
         this.makeRequest(path, init)
 			.then(data => {
-			    console.log("bubble after post", data)
             	this.setState({archive: data});
+            }, err => {
+            	console.error(err);
+            })
+    }
+
+    postMessage = () => {
+    	let userMail = {
+	        emailMessage : this.state.emailMessage,
+	        message : this.state.message,
+	        date: this.date.getDate() + "-" + this.abbriv[this.date.getMonth() + 1] + "-" + String(this.date.getYear()).substring(1, this.date.getYear().length)
+	    }
+
+	    
+        let path = "/messageBoard/postMessage";
+        let init = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(userMail) }
+         	
+        this.makeRequest(path, init)
+			.then(data => {
+            	alert(data);
             }, err => {
             	console.error(err);
             })
@@ -76,8 +110,20 @@ export default class Home extends Component {
                     });
                     break;
                 }
-            case '__':
+            case 'emailMessage':
                 {
+                	let emailMessage = e.target.value;
+                    this.setState(() => {
+                        return { emailMessage };
+                    });
+                    break;
+                }
+            case 'message':
+                {
+                	let message = e.target.value;
+                    this.setState(() => {
+                        return { message };
+                    });
                     break;
                 }
             default:
@@ -158,7 +204,7 @@ const About = () => {
 					<h4>Dreams</h4>
 					<div className="paragraphs">
 						<p>My dreams are aligned with my goals. I dream of helping youths tackle inequality through creative education systems. I dream of an era where high school students matriculate with competent skills in order to apply for intern-level work. An era where the school system empowers students instead of limiting them with subject that are barely relevant in the working sector.</p>
-						<p>I dream of empowering the generation after me with competent skills to better and help themselves and other after them. I dream of a legacy that will continue helping others help themselve throught a continues iterative process for generations to come. Making our world better starts with the unconditioned youth.</p>
+						<p>I dream of a legacy that will continue helping others help themselve throught a continues iterative process for generations to come. Making our world better starts with the unconditioned youth.</p>
 					</div>
 				</div>
 				<div id="whatsnext">
@@ -313,19 +359,20 @@ const Contact = props => {
 					</div>
 				</div>
 				<div id="boardAction">
+                    <i>+278 4240 7666</i>
 					<div id="note">
-						<h3 style={{justifyContent: "center", textAllign: "center"}}>add note</h3>
-						<div id="noteLabels" style={{float: "left"}}>
+						<h3>add note</h3>
+						<div id="noteLabels">
 							<h4 htmlFor="author">Author:</h4>
 							<h4 htmlFor="email">Email:</h4>
 							<h4 htmlFor="note">Note:</h4>
 						</div>
-						<div id="noteInputs" style={{float: "right"}}>
+						<div id="noteInputs">
 							<input id="author" required="required" onChange={(event) => props.captureInputById(event)}></input>
 							<input id="emailNote" required="required"  onChange={(event) => props.captureInputById(event)}></input>
 							<textarea id="note" rows="4" cols="20"  onChange={(event) => props.captureInputById(event)}></textarea>
 						</div>
-						<button id="submitNote" style={{justifyContent: "center"}} onClick={() => props.postNote()}>post</button>
+						<button id="submitNote" onClick={() => props.postNote()}>post</button>
 					</div>
 					<div id="message">
 						<h3>message me</h3>
@@ -334,8 +381,8 @@ const Contact = props => {
 							<h4 htmlFor="author">Message:</h4>
 						</div>
 						<div id="messageInputs">
-							<input id="emailMessage" required="required"></input>
-							<textarea id="message" rows="4" cols="20"></textarea>
+							<input id="emailMessage" required="required" onChange={(event) => props.captureInputById(event)}></input>
+							<textarea id="message" rows="4" cols="20" onChange={(event) => props.captureInputById(event)}></textarea>
 						</div>
 						<button id="submitMessage">send</button>
 					</div>

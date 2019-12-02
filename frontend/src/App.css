@@ -1,5 +1,6 @@
 .container {
-	display: flex; 
+	display: flex;
+	position: relative;
 	justify-content: space-between;
 }
 
@@ -11,17 +12,54 @@ div.sub-content {
 	align-items: stretch;
 }
 
+div#curtain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	background: grey;
+	z-index: 20;
+	mix-blend-mode: hard-light;
+}
+
+div#curtain h1 {
+	width: 90%;
+    height: auto;
+    text-align: center;
+    text-shadow: 0 2px 5px whitesmoke;
+    font-feature-settings: normal;
+    font-variant-caps: normal;
+    font-size: 50px;
+    margin: 6% auto;
+}
+
+div#curtain cite {
+	mix-blend-mode: none;
+}
+
+@media screen and (max-width: 768px){
+	div#curtain h1 {
+		font-size: 42px;
+		margin: 8% auto;
+	}
+}
+
 @media screen and (max-width: 320px){
 	div.sub-content {
-		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 1em;
-		justify-items: stretch;
-		align-items: stretch;
+	}
+
+	div#curtain h1 {
+		font-size: 28px;
+		margin: 12% auto;
 	}
 }
 
 @media screen and (max-width: 992px)
-.container {
-    max-width: 760px;
+{
+	.container {
+	    max-width: 760px;
+	}
 }

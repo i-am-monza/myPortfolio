@@ -14,6 +14,10 @@
     "dev": "run-p -cn dev:*",
     "install:React": "cd frontend && npm install",
     "install:Express": "cd backend && npm install",
-    "prepare": "run-p install:*"
+    "prepare": "run-p install:*",
+	"heroku-postbuild": "cd frontend/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }

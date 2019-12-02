@@ -1,81 +1,82 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 // Import the styles applied in this component
 import './Header.css';
-import {NavigatorMini} from './NavigatorMini.js';
+import { NavigatorMini } from './NavigatorMini.js';
 
-export default class Header extends Component
-{
-	url_ = "http://localhost:3001";
+export default class Header extends Component {
+    url_ = "http://localhost:3001";
 
-	constructor()
-	{
-		super();
+    constructor() {
+        super();
 
-		this.state = {email: ""};
-	} 
+        this.state = { email: "" };
+    }
 
-	showNavigatorMini = () => {
-		let showNavigatorButton = document.getElementById("showNavigatorMini");
-		let showLinksButton = document.getElementById("showLinksMini");
-		let navigatorMini = document.getElementById("navigatorMini");
+    makeRequest = async (path, init) => {
+    	let request = await fetch(this.url_.concat(path, init));
 
-		showNavigatorButton.style.display = "none";
-		showLinksButton.style.display = "none";
-		navigatorMini.style.display = "block";
-		console.log("navigatorMini -", navigatorMini);
-	}
+		let response = await request.json();
 
-	showRequestCv = () => {
-		let showNavigatorButton = document.getElementById("showNavigatorMini");
-		let showLinksButton = document.getElementById("showLinksMini");
-		let emailControls = document.getElementById("email-controls");
-		let cvRequestControls = document.getElementById("cvRequest-controls");
+		return response;
+    }
 
-		console.log("showNavigatorButton -", showNavigatorButton);
+    showNavigatorMini = () => {
+        let showNavigatorButton = document.getElementById("showNavigatorMini");
+        let showLinksButton = document.getElementById("showLinksMini");
+        let navigatorMini = document.getElementById("navigatorMini");
 
-		let requestMedium = document.getElementById("request-medium");
-		requestMedium.style.display = "none";
+        showNavigatorButton.style.display = "none";
+        showLinksButton.style.display = "none";
+        navigatorMini.style.display = "block";
+        console.log("navigatorMini -", navigatorMini);
+    }
 
-		showNavigatorButton.style.display = "none";
-		showLinksButton.style.display = "none";
-		emailControls.style.display = "flex";
-		cvRequestControls.style.display = "block";
-	}
+    showRequestCv = () => {
+        let showNavigatorButton = document.getElementById("showNavigatorMini");
+        let showLinksButton = document.getElementById("showLinksMini");
+        let emailControls = document.getElementById("email-controls");
+        let cvRequestControls = document.getElementById("cvRequest-controls");
 
-	showLinks = () => {
+        console.log("showNavigatorButton -", showNavigatorButton);
 
-	}
+        let requestMedium = document.getElementById("request-medium");
+        requestMedium.style.display = "none";
 
-	sendRequest = e => {
-		
-		if(this.state.email !== "" || this.state.email !== undefined)
-		{
-			let init = { method: "GET", headers: { "Content-Type": "application/json" } };
-			
-			fetch(this.url_.concat('/getcv'), init)
-				.then(response => {
-					return response.json();
-				}).then(data => {
-					alert(data);
-				}, err => {
-					console.error(err);
-				})
-		}
-		else
-		{
-			alert("Invalid email address.");
-		}
+        showNavigatorButton.style.display = "none";
+        showLinksButton.style.display = "none";
+        emailControls.style.display = "flex";
+        cvRequestControls.style.display = "block";
+    }
 
-	}
+    showLinks = () => {
 
-	captureEmail = e => {
-		this.setState({email: e.target.value});
-	}
-	
-	render()
-	{
-		return (
-			<div className="header">
+    }
+
+    sendRequest = e => {
+
+        if (this.state.email !== "" || this.state.email !== undefined) {
+            let path = "/getcv";
+            let init = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(this.state.email) };
+
+            this.makeRequest(path, init)
+                .then(data => {
+                    alert(data);
+                }, err => {
+                    console.error(err);
+                });
+        } else {
+            alert("Invalid email address.");
+        }
+
+    }
+
+    captureEmail = e => {
+        this.setState({ email: e.target.value });
+    }
+
+    render() {
+        return (
+            <div className="header">
 				<div id="headerStage">
 					<article className="navigatorMiniStage">
 						<button id="showNavigatorMini" onClick={() => this.showNavigatorMini()}>Menu</button>
@@ -103,6 +104,6 @@ export default class Header extends Component
 					</div>
 				</div>
 			</div>
-		);
-	}
+        );
+    }
 }
