@@ -1,5 +1,4 @@
 {
-  "name": "application",
   "dependencies": {
     "cross-env": "^6.0.0",
     "nodemon": "^1.19.2",
@@ -10,14 +9,10 @@
     "Express": "cross-env NODE_ENV=production npm run start --prefix backend",
     "start": "run-s -cn React Express",
     "dev:React": "cross-env NODE_ENV=development npm run start --prefix frontend",
-    "dev:Express": "cd backend && cross-env NODE_ENV=development nodemon --exec \"npm start\" --ignore ",
+    "dev:Express": "cd backend && cross-env NODE_ENV=development nodemon --exec \"npm start\" --ignore \"favorites.json\"",
     "dev": "run-p -cn dev:*",
     "install:React": "cd frontend && npm install",
     "install:Express": "cd backend && npm install",
-    "prepare": "run-p install:*",
-	"heroku-postbuild": "cd frontend/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
-  },
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "prepare": "run-p install:*"
   }
 }

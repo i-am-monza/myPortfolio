@@ -197,11 +197,6 @@ div#hobbies p, div#dreams p {
 }
 
 @media screen and (max-width: 2560px) {
-
-	div.about {
-		margin-left: 1%;
-	}
-
 	div#collage {
 		display: grid;
 	    height: 100%;
@@ -241,7 +236,7 @@ div#hobbies p, div#dreams p {
 	}
 
 	div#whatsnext {
-		width: 1780px;
+		width: 1890px;
 		grid-column: 1/4;
 		grid-row: 8;
 	}

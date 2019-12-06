@@ -4,45 +4,50 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var fs = require('fs');
 var nodemailer = require('nodemailer');
+var xoauth2 = require('xoauth2');
 var details = require('./src/details.json');
 var app = express();
 var PORT = process.env.PORT || 3001;
 var archive = require('./src/archive.json');
 var cors = require('cors');
+var transport = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        xoauth2: xoauth2.createXOAuth2Generator({
+            user: '{username}',
+            clientId: '{Client ID}',
+            clientSecret: '{Client Secret}',
+            refreshToken: '{refresh-token}',
+            accessToken: '{cached access token}'
+        })
+    }
+});
 	
 app.use(cors());
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+-
+app.use(express.static(path.join(__dirname, '/../projects-frontend/build')));
 
-const transport = nodemailer.createTransport({
-	service: details.service,
-	auth: {
-		user: details.auth.user,
-		pass: details.auth.pass
-	}
-})
-
-app.post('/getcv', (req, res, next) => {
+app.get('/getcv', (req, res, next) => {
 	let mailPacket = {
-		from: req.body,
+		from: req.query.email,
 		to: details.auth.user,
 		subject: "CV Request From Portfolio",
-		html: "Hi Monza\nA user has requested for your cv.\nEmail address: " + req.body
+		html: "Hi Monza\nA user has requested for your cv.\nEmail address: " + req.queryemail
 	}
 
 	transport.sendMail(mailPacket, (info, err) => {
 		if(err)
 		{
-			res.json(err);
+			console.log("Error:", err)
 		}
 		else
 		{
-			res.json(info);
+			console.log("Success:", info)
 		}
 	});
-	
+	res.send({archive: "ijdnio"});
 });
 
 app.get('/messageBoard/getNotes', (req, res, next) => {
