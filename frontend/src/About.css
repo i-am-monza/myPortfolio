@@ -3,7 +3,7 @@ div.about {
 	display: none;
     height: 960px;
     width: 100%;
-    margin-left: 0%;
+    margin: 10% 5%;
     top: 10%;
 	background-color: rgba(7, 38, 95, -1);
 	background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
@@ -197,6 +197,11 @@ div#hobbies p, div#dreams p {
 }
 
 @media screen and (max-width: 2560px) {
+
+	div.about {
+		margin-left: 1%;
+	}
+
 	div#collage {
 		display: grid;
 	    height: 100%;
@@ -236,7 +241,7 @@ div#hobbies p, div#dreams p {
 	}
 
 	div#whatsnext {
-		width: 1890px;
+		width: 1780px;
 		grid-column: 1/4;
 		grid-row: 8;
 	}
@@ -261,6 +266,7 @@ div#hobbies p, div#dreams p {
 @media screen and (max-width: 1440px) {
 	div.about {
 	    left: 0em;
+	    margin: 5% 0%;
 	}
 
 	div#collage {
@@ -394,7 +400,7 @@ div#hobbies p, div#dreams p {
 	}
 
 	div.about {
-	    left: -1.2%;
+	    left: 2%;
 	}
 
 	div#collage {

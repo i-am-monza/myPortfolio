@@ -13,8 +13,7 @@ export default class Header extends Component {
     }
 
     makeRequest = async (path, init) => {
-        console.log("Im here in makerequest", path, init);
-    	let request = await fetch(this.url_.concat(path), init);
+    	let request = await fetch(this.url_.concat(path, init));
 
 		let response = await request.json();
 
@@ -56,9 +55,9 @@ export default class Header extends Component {
     sendRequest = e => {
 
         if (this.state.email !== "" || this.state.email !== undefined) {
-            let path = `/getcv/?email=${this.state.email}`;
-            let init = { method: "GET", headers: { "Content-Type": "application/json" }};
-            console.log("About to make request")
+            let path = "/getcv";
+            let init = { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(this.state.email) };
+
             this.makeRequest(path, init)
                 .then(data => {
                     alert(data);
@@ -86,11 +85,11 @@ export default class Header extends Component {
 					</article>
 					<div className="social-link">
 						{/* Get font-awesome icons for the icon links, and change css to acommodate*/}
-						<a id="linkedinIcon" href="https://www.linkedin.com/in/monwabisi-dingane-4287028b/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin fa-2x"></i></a>
-						<a id="githubIcon" href="https://github.com/i-am-monza/" target="_blank" rel="noopener noreferrer"><i className="fab fa-github fa-2x"></i></a>
-						<a id="twitterIcon" href="https://twitter.com/IAmMonza" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter fa-2x"></i></a>
-						<a id="facebookIcon" href="https://www.facebook.com/monwabisi.dingane.7" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook fa-2x"></i></a>
-						<a id="instagramIcon" href="https://www.instagram.com/iammonza/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram fa-2x"></i></a>
+						<a id="linkedinIcon" href="#linkedin" target="_blank"><i className="fab fa-linkedin fa-3x"></i></a>
+						<a id="githubIcon" href="#github" target="_blank"><i className="fab fa-github fa-3x"></i></a>
+						<a id="twitterIcon" href="#twitter" target="_blank"><i className="fab fa-twitter fa-3x"></i></a>
+						<a id="facebookIcon" href="#facebook" target="_blank"><i className="fab fa-facebook fa-3x"></i></a>
+						<a id="instagramIcon" href="#instagram" target="_blank"><i className="fab fa-instagram fa-3x"></i></a>
 					</div>
 					<div className="request">
 						<div id="email-controls">

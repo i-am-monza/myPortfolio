@@ -30,7 +30,7 @@ rect {
 div.careers {
 	display: none;
 	position: absolute;
-	width: calc(100px + 82%);
+	margin: 10% 5%;
 	left: 5px;
 	width: 96%;
 	justify-items: stretch;
@@ -229,7 +229,6 @@ div#experience div {
 
 @media screen and (max-width: 2560px) {
 	div.careers {
-		margin: 2% 4%;
 		width: 92%;
 		height: fit-content;
 	}
@@ -293,15 +292,32 @@ div#experience div {
 
 @media screen and (max-width: 1440px) {
 	div.careers {
-		margin: 2% 4%;
+		margin: 10% 5%;
+	}
+
+	div.careers p {
+		font-family: Consolas;
+		line-height: 25px;
+    	font-size: 25px;
+		font-weight: 400;
+		font-feature-settings: p-caps;
+		color: whitesmoke;
+		padding: 5px;
+		margin: 5px;
+	}
+
+	#sfdaHeader, #mentorHeader, #itrHeader, #uctHeader, #cogrammarHeader { 
+		font-weight: 500; 
+		line-height: 28px;
+		font-size: 28px;
 	}
 }
 
 @media screen and (max-width: 1024px) {
 	div.careers {
-		margin: 4% 2%;
+		margin: 10% 5%;
 	}
-
+	
 	div.careers p {
 		font-family: Consolas;
 		line-height: 20px;
@@ -322,7 +338,6 @@ div#experience div {
 
 @media screen and (max-width: 768px) {
 	div.careers {
-		margin: 1% 1.5%;
 		width: 96%;
 	}
 
@@ -370,8 +385,8 @@ div#experience div {
 
 @media screen and (max-width: 425px) {
 	div.careers {
-		margin: 0% 2%;
 		width: 96%;
+		left: -18px;
 	}
 
 	div#careers h3 {
@@ -444,7 +459,6 @@ div#experience div {
 
 @media screen and (max-width: 320px){
 	div.careers {
-		margin: 0% 2%;
 		width: 96%;
 	}
 

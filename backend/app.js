@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var fs = require('fs');
 var nodemailer = require('nodemailer');
 var xoauth2 = require('xoauth2');
@@ -27,14 +26,18 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 -
-app.use(express.static(path.join(__dirname, '/../projects-frontend/build')));
+app.use(express.static(path.join(__dirname, '/../frontend/build')));
+
+app.get('/', (req, res, next) => {
+	res.json("Connected to server.")
+})
 
 app.get('/getcv', (req, res, next) => {
 	let mailPacket = {
 		from: req.query.email,
 		to: details.auth.user,
 		subject: "CV Request From Portfolio",
-		html: "Hi Monza\nA user has requested for your cv.\nEmail address: " + req.queryemail
+		html: "Hi Monza\nA user has requested for your cv.\nEmail address: " + req.query.email
 	}
 
 	transport.sendMail(mailPacket, (info, err) => {

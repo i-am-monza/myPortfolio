@@ -1,7 +1,7 @@
 div.navigator {
 	position: fixed;
 	width: 20%;
-    left: 0%;
+    left: 2%;
     grid-column: 1;
     grid-row: 3;
     z-index: 12;
@@ -83,7 +83,10 @@ li:hover::before {
     }
 }
 
-@media screen and (max-width: 2560px) {
+@media screen and (max-width: 2460px) {
+    div.navigator {
+        left: -2%;
+    }
 
     li {
         margin-top: 30%;
@@ -92,8 +95,8 @@ li:hover::before {
     }
 
     li a {
-        font-size: 80px;
-        font-weight: 400;
+        font-size: 60px;
+        font-weight: 800;
         text-shadow: 0px 0px .05em whitesmoke;
     }
 }
